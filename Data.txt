@@ -1,0 +1,10 @@
+A : Gerbang Depan
+B : Feb 
+C : Fc 
+D : Danau Unesa
+E : Vokasi
+F : Masjid Unesa 
+G : FMIPA
+H : FISH 
+I : FT 
+J : Gerbang Belakang
