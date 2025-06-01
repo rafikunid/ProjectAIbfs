@@ -64,7 +64,7 @@ edges = [
 ]
 
 for u, v in edges:
-    Graph.add_edge(u, v, weight=1)
+    Graph.add_edge(u, v, weight=5)
 
 # Fungsi untuk menampilkan daftar lokasi
 def show_routes():
