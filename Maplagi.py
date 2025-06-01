@@ -8,12 +8,12 @@ Graph = nx.Graph()
 # Nama-nama node
 nodes = {
     'A': 'Gerbang Depan',
-    'B': 'FEB',
-    'C': 'FC',
-    'D': 'Danau Unesa',
-    'E': 'Vokasi',
-    'F': 'Masjid Unesa',
-    'G': 'FMIPA',
+    'B': 'Masjid unesa',
+    'C': 'Vokasi',
+    'D': 'FC',
+    'E': 'Danau unesa',
+    'F': 'FMIPA',
+    'G': 'FEB',
     'H': 'FISH',
     'I': 'FT',
     'J': 'Gerbang Belakang'
@@ -23,21 +23,44 @@ Graph.add_nodes_from(nodes.keys())
 
 edges = [
     ('A', 'C'),  
-    ('A', 'F'),  
-    ('C', 'F'),
-    ('C', 'E'),
+    ('A', 'D'),  
+    ('A', 'B'), 
+    ('B', 'A'),
+    ('B', 'D'),
+    ('B', 'F'),
+    ('B', 'J'),
+    ('C', 'A'),
     ('C', 'D'),
-    ('E', 'D'),
-    ('E', 'B'),
+    ('C', 'G'),
+    ('D', 'A'),
     ('D', 'B'),
-    ('D', 'G'),
-    ('D', 'H'),
-    ('G', 'F'),
-    ('G', 'I'),
-    ('G', 'J'),
+    ('D', 'C'),
+    ('D', 'E'),
+    ('D', 'F'),
+    ('E', 'C'),
+    ('E', 'D'),
+    ('E', 'F'),
+    ('E', 'I'),
+    ('E', 'H'),
+    ('E', 'G'),
+    ('F', 'B'),
+    ('F', 'D'),
+    ('F', 'E'),
+    ('F', 'I'),
+    ('F', 'J'),
+    ('G', 'C'),
+    ('G', 'E'),
+    ('G', 'H'),
+    ('H', 'G'),
+    ('H', 'E'),
     ('H', 'I'),
+    ('I', 'H'),
+    ('I', 'E'),
+    ('I', 'F'),
     ('I', 'J'),
-    ('F', 'J')
+    ('J', 'B'),
+    ('J', 'F'),
+    ('J', 'I')
 ]
 
 for u, v in edges:
@@ -90,7 +113,7 @@ def show_graph(route=None):
 
 # Menu Utama
 while True:
-    print("MENU UTAMA")
+    print(" MENU UTAMA")
     print("1. Tampilkan Daftar Titik")
     print("2. Cari Jalur BFS dan Tampilkan Graf")
     print("3. Keluar")
@@ -109,7 +132,7 @@ while True:
             path = bfs(Graph, start, goal)
             if path:
                 print(f"Jalur BFS dari {start} ke {goal}: {' -> '.join(path)}")
-                print("Rute Tempat:")
+                print(" Rute Tempat:")
                 for p in path:
                     print(f"{p} : {nodes[p]}")
                 show_graph(path)
